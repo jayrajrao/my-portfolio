@@ -126,11 +126,11 @@ function LinkedinIcon({ size = 16 }) {
     </svg>
   );
 }
-function MethodBadge({ method }) {
+function MethodBadge({ method }: { method: string }) {
   return <span className={`method method-${method.toLowerCase()}`}>{method}</span>;
 }
 
-function StatusDot({ label = "online" }) {
+function StatusDot({ label = "online" }: { label?: string }) {
   return (
     <span className="status-dot">
       <Circle size={7} fill="currentColor" strokeWidth={0} />
@@ -139,7 +139,15 @@ function StatusDot({ label = "online" }) {
   );
 }
 
-function SectionHeading({ method, route, title }) {
+function SectionHeading({
+  method,
+  route,
+  title,
+}: {
+  method: string;
+  route: string;
+  title: string;
+}) {
   return (
     <div className="section-heading">
       <MethodBadge method={method} />
